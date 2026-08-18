@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CreatorKit — Digital Products</title>
+<meta name="description" content="CreatorKit — practical digital products for creators.">
+<style>
+:root{--bg:#070a12;--panel:#101522;--panel2:#151b2b;--text:#f7f8fc;--muted:#aab3c8;--line:#252d42;--accent:#7c6cff;--accent2:#9b8fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0,#24204d 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1160px;margin:auto;padding:0 22px}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:#070a12dd;backdrop-filter:blur(16px);z-index:20}
+.logo{font-weight:900;font-size:22px}.logo b{color:var(--accent2)}.links{display:flex;gap:25px;color:var(--muted);font-size:14px}.cartbtn{border:1px solid var(--line);background:var(--panel);color:white;padding:10px 14px;border-radius:12px;cursor:pointer}
+.hero{padding:90px 0 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}.pill{display:inline-block;background:#191631;color:#b9afff;border:1px solid #38305f;border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800;letter-spacing:.08em}
+h1{font-size:clamp(45px,7vw,78px);line-height:.98;letter-spacing:-.05em;margin:18px 0}.hero p{font-size:19px;line-height:1.7;color:var(--muted);max-width:620px}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:13px;padding:13px 18px;background:var(--accent);color:white;font-weight:800;cursor:pointer}.btn.secondary{background:var(--panel2);border:1px solid var(--line)}
+.hero-card{border:1px solid var(--line);background:linear-gradient(145deg,#171d31,#0d111d);padding:24px;border-radius:28px;box-shadow:0 30px 100px #0008}.mock{background:#090c15;border:1px solid #293149;border-radius:18px;padding:20px}.mocktop{display:flex;justify-content:space-between;color:#8f99b0;font-size:12px}.mock h3{font-size:28px;margin:40px 0 12px}.mockline{height:11px;background:#242c40;border-radius:10px;margin:10px 0}.mockline.w{width:70%}.mockbutton{height:42px;background:var(--accent);border-radius:10px;margin-top:24px}
+section{padding:65px 0}.head{text-align:center;margin-bottom:35px}.head h2{font-size:38px;margin:0 0 8px}.head p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.product{background:linear-gradient(180deg,#131a2a,#0e131f);border:1px solid var(--line);border-radius:22px;padding:22px;transition:.2s}.product:hover{transform:translateY(-4px);border-color:#414d70}.cover{height:150px;border-radius:15px;background:linear-gradient(135deg,#29215c,#161d3b);display:flex;align-items:center;justify-content:center;font-size:34px;margin-bottom:18px}.tag{color:#bcb4ff;font-size:11px;font-weight:900;letter-spacing:.08em}.product h3{margin:8px 0;font-size:21px}.product p{color:var(--muted);min-height:50px}.buyrow{display:flex;align-items:center;justify-content:space-between;margin-top:18px}.price{font-size:24px;font-weight:900}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:18px}.feature b{display:block;margin-bottom:7px}.feature span{color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#7f899f;font-size:13px}
+.overlay{display:none;position:fixed;inset:0;background:#0009;z-index:50}.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#0d121e;border-left:1px solid var(--line);padding:24px;overflow:auto}.overlay.show{display:block}.drawerhead{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:white;font-size:25px;cursor:pointer}.item{display:flex;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}.item .mini{width:60px;height:60px;border-radius:12px;background:#24204d;display:grid;place-items:center}.itemmain{flex:1}.itemmain small{color:var(--muted)}.remove{color:#ff9c9c;background:none;border:0;cursor:pointer}.total{display:flex;justify-content:space-between;font-size:22px;font-weight:900;padding:20px 0}.form input{width:100%;padding:13px;margin:7px 0;background:#0a0e17;border:1px solid var(--line);border-radius:10px;color:white}.note{color:#8993a9;font-size:12px;line-height:1.5}.success{padding:30px 0;text-align:center}.success .big{font-size:50px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:60px}.grid,.features{grid-template-columns:1fr}.links{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap" style="width:100%;display:flex;justify-content:space-between;align-items:center"><a class="logo" href="#">Creator<b>Kit</b></a><div style="display:flex;align-items:center;gap:20px"><div class="links"><a href="#shop">Shop</a><a href="#why">Why us</a></div><button class="cartbtn" onclick="openCart()">Cart <span id="count">0</span></button></div></div></nav>
+
+<main>
+<section class="hero"><div class="wrap" style="display:contents">
+<div><span class="pill">DIGITAL PRODUCTS • INSTANT ACCESS</span><h1>Tools that make creating easier.</h1><p>Practical templates and resources for creators who want to plan faster, stay organized, and publish consistently.</p><a class="btn" href="#shop">Shop the collection →</a></div>
+<div class="hero-card"><div class="mock"><div class="mocktop"><span>CREATORKIT</span><span>2026</span></div><h3>Creator Starter Pack</h3><div class="mockline"></div><div class="mockline w"></div><div class="mockbutton"></div></div></div>
+</div></section>
+
+<section id="shop"><div class="wrap"><div class="head"><h2>Shop digital products</h2><p>One-time purchases. No subscriptions.</p></div>
+<div class="grid" id="products"></div></div></section>
+
+<section id="why"><div class="wrap"><div class="head"><h2>Simple. Useful. Instant.</h2><p>A clean buying experience for your customers.</p></div><div class="features"><div class="feature"><b>⚡ Instant access</b><span>Digital products can be delivered immediately after a successful payment.</span></div><div class="feature"><b>🔒 Secure checkout ready</b><span>Connect the checkout button to your payment provider before launch.</span></div><div class="feature"><b>📱 Mobile friendly</b><span>Designed to work smoothly on phones, tablets, and computers.</span></div></div></div></section>
+</main>
+<footer><div class="wrap">© 2026 CreatorKit · Sell only original or properly licensed products.</div></footer>
+
+<div class="overlay" id="overlay"><aside class="drawer"><div class="drawerhead"><h2 id="drawerTitle">Your cart</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartBody"></div></aside></div>
+
+<script>
+const PRODUCTS=[
+{id:1,name:"Social Media Planner",price:5,emoji:"📅",tag:"PLANNER",desc:"A clean weekly system for planning posts, ideas and content."},
+{id:2,name:"100 Content Ideas",price:7,emoji:"💡",tag:"IDEAS",desc:"A practical idea bank for creators who need inspiration."},
+{id:3,name:"Creator Starter Pack",price:12,emoji:"🚀",tag:"BUNDLE",desc:"Planner, checklist and idea sheets in one useful bundle."},
+{id:4,name:"Brand Kit Checklist",price:4,emoji:"✨",tag:"CHECKLIST",desc:"A simple checklist for building a consistent creator brand."},
+{id:5,name:"30-Day Content Calendar",price:9,emoji:"🗓️",tag:"CALENDAR",desc:"A ready-to-customize month of content planning prompts."},
+{id:6,name:"Creator Bundle",price:19,emoji:"🎁",tag:"BEST VALUE",desc:"A larger bundle combining the core CreatorKit resources."}
+];
+let cart=JSON.parse(localStorage.getItem("ck_cart")||"[]");
+const $=id=>document.getElementById(id);
+function money(n){return "$"+n.toFixed(2)}
+function renderProducts(){$("products").innerHTML=PRODUCTS.map(p=>`<article class="product"><div class="cover">${p.emoji}</div><span class="tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="buyrow"><span class="price">${money(p.price)}</span><button class="btn" onclick="add(${p.id})">Add to cart</button></div></article>`).join("")}
+function save(){localStorage.setItem("ck_cart",JSON.stringify(cart));renderCart();$("count").textContent=cart.reduce((a,x)=>a+x.qty,0)}
+function add(id){let x=cart.find(i=>i.id===id);x?x.qty++:cart.push({id,qty:1});save();openCart()}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);save()}
+function renderCart(){
+ if(!cart.length){$("cartBody").innerHTML='<p style="color:#aab3c8;margin-top:30px">Your cart is empty.</p>';return}
+ let total=0;
+ const rows=cart.map(x=>{let p=PRODUCTS.find(p=>p.id===x.id);total+=p.price*x.qty;return `<div class="item"><div class="mini">${p.emoji}</div><div class="itemmain"><b>${p.name}</b><br><small>${money(p.price)} × ${x.qty}</small></div><button class="remove" onclick="removeItem(${p.id})">Remove</button></div>`}).join("");
+ $("cartBody").innerHTML=rows+`<div class="total"><span>Total</span><span>${money(total)}</span></div><div class="form"><input id="email" type="email" placeholder="Your email for delivery"><button class="btn" style="width:100%;margin-top:8px" onclick="checkout()">Continue to checkout</button><p class="note" style="margin-top:12px">Demo checkout: connect this button to Stripe, PayPal, or another supported payment processor before accepting real payments.</p></div>`;
+}
+function openCart(){$("overlay").classList.add("show");renderCart()}
+function closeCart(){$("overlay").classList.remove("show")}
+function checkout(){
+ const email=$("email")?.value.trim();
+ if(!email || !email.includes("@")){alert("Please enter a valid email.");return}
+ $("drawerTitle").textContent="Checkout ready";
+ $("cartBody").innerHTML='<div class="success"><div class="big">✓</div><h2>Order prepared</h2><p style="color:#aab3c8">Your cart is ready for payment. Connect a real payment provider to complete the transaction and automatically deliver the files.</p><button class="btn" onclick="closeCart()">Back to store</button></div>';
+}
+renderProducts();save();
+</script>
+</body>
+</html>
